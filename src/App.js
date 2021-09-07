@@ -25,7 +25,7 @@ const App = () => {
     if (token) {
       config.headers['Authorization'] = `Token ${token}`
     }
-    axios.get('http://127.0.0.1:8000/api/auth/user', config).then(res => dispatch(loaduser(res.data))).catch(
+    axios.get('https://photogallerys.herokuapp.com/api/auth/user', config).then(res => dispatch(loaduser(res.data))).catch(
       err => console.log(err)
     )
   }
