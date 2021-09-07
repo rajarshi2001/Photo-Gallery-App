@@ -18,7 +18,7 @@ const Header = () => {
           if(token){
               config.headers['Authorization'] = `Token ${token}`
           }
-          axios.post('http://127.0.0.1:8000/api/auth/logout/', null, config).then(res => dispatch(logoutsuccess())).catch(
+          axios.post('https://reactdjangogallery.herokuapp.com/api/auth/logout/', null, config).then(res => dispatch(logoutsuccess())).catch(
               err => console.log(err)
           )
     }

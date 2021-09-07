@@ -30,7 +30,7 @@ const Login = () => {
                 "Content-Type": "application/json"
             }
         }
-        axios.post('http://127.0.0.1:8000/api/auth/login', body, config).then(res => dispatch(loginsuccess(res.data))).catch(err => 
+        axios.post('https://reactdjangogallery.herokuapp.com/api/auth/login', body, config).then(res => dispatch(loginsuccess(res.data))).catch(err => 
         dispatch(geterrors({
             errdata: err.response.data.non_field_errors[0],
             errstatus: err.response.status

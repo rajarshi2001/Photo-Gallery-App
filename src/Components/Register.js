@@ -39,7 +39,7 @@ const Register = () => {
             const body = JSON.stringify({
                 username, email, password
             })
-            axios.post('http://127.0.0.1:8000/api/auth/register', body, config).then(res =>
+            axios.post('https://reactdjangogallery.herokuapp.com/api/auth/register', body, config).then(res =>
                 alert("You are registered successfully")).catch(err => console.log(err))
             setReg({
                 username: "",

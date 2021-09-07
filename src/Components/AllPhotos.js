@@ -23,7 +23,7 @@ const AllPhotos = () => {
         if(token){
             config.headers['Authorization'] = `Token ${token}`
         }
-        axios.delete(`http://127.0.0.1:8000/photodelapi/${id}`, config).then(res => dispatch(delphotos(id))).catch(
+        axios.delete(`https://reactdjangogallery.herokuapp.com/photodelapi/${id}`, config).then(res => dispatch(delphotos(id))).catch(
             err => console.log(err)
         )
     }
@@ -36,7 +36,7 @@ const AllPhotos = () => {
         if(token){
             config.headers['Authorization'] = `Token ${token}`
         }
-        axios.get('http://127.0.0.1:8000/galleryapi/', config).then(res => dispatch(getphotos(res.data))).catch(err => console.log(err))
+        axios.get('https://reactdjangogallery.herokuapp.com/galleryapi/', config).then(res => dispatch(getphotos(res.data))).catch(err => console.log(err))
     }
     useEffect(()=>{
         fetchphotos()
