@@ -32,7 +32,7 @@ const AddPhotos = ({ username }) => {
             if (token) {
                 config.headers['Authorization'] = `Token ${token}`
             }
-            axios.post('https://reactdjangogallery.herokuapp.com/galleryapi/', body, config).then((res) => {
+            axios.post('https://reactdjangogallery.herokuapp.com/galleryapi', body, config).then((res) => {
                 console.log(res.data)
                 dispatch(addphotos(res.data))
             }).catch(
