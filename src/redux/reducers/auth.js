@@ -20,7 +20,7 @@ export const auth = (state=initialState, action) =>{
         case LOGOUT_SUCCESS:
             localStorage.removeItem('token')
             return{
-                isAuthenticated: false,
+                isAuthenticated: null,
                 token: null,
                 user: null
             }
