@@ -36,7 +36,7 @@ const AllPhotos = () => {
         if(token){
             config.headers['Authorization'] = `Token ${token}`
         }
-        axios.get('https://reactdjangogallery.herokuapp.com/galleryapi', config).then(res => dispatch(getphotos(res.data))).catch(err => console.log(err))
+        axios.get('https://reactdjangogallery.herokuapp.com/galleryapi/', config).then(res => dispatch(getphotos(res.data))).catch(err => console.log(err))
     }
     useEffect(()=>{
         fetchphotos()
