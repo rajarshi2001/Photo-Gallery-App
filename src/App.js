@@ -22,7 +22,7 @@ const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    if (token) { }
+    if (token) { 
     config.headers['Authorization'] = `Token ${token}`
 
 
