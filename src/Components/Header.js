@@ -28,7 +28,7 @@ const Header = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg-dark">
                 <div className="container-fluid">
                     {
-                        !token ?   <Link className="navbar-brand text-white" to="/">Photo Gallery App</Link>:
+                        !isAuthenticated ?   <Link className="navbar-brand text-white" to="/">Photo Gallery App</Link>:
                         <Link className="navbar-brand text-white" to="/dashboard">Photo Gallery App</Link>
                     }
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@ const Header = () => {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                             {
-                                !token ? <>
+                                !isAuthenticated ? <>
                                     <li className="nav-item ">
                                         <Link className="nav-link active text-white" aria-current="page" to="/register">Register</Link>
                                     </li>

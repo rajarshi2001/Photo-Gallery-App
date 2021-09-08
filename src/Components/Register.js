@@ -52,7 +52,7 @@ const Register = () => {
     return (
         <>
             {
-                token ? <Redirect to="/dashboard" /> :
+                isAuthenticated ? <Redirect to="/dashboard" /> :
                     <>
                         <div className="container my-3">
                             <div className="row">
