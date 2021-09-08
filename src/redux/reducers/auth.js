@@ -26,9 +26,9 @@ export const auth = (state=initialState, action) =>{
             }
         case USER_LOADED:
             return{
-                ...state,
                 isAuthenticated: true,
-                user: action.payload
+                user: action.payload.det,
+                token: action.payload.tokens
             }
         default:
             return state
