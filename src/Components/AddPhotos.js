@@ -42,6 +42,8 @@ const AddPhotos = ({ username }) => {
         }
     }
     console.log(isAuthenticated)
+    console.log(localStorage)
+    console.log(token)
     return (
         <>
             <div className="container my-3">
