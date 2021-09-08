@@ -24,10 +24,13 @@ const App = () => {
     }
     if (token) {
       config.headers['Authorization'] = `Token ${token}`
+
+
+      axios.get('https://photogallerys.herokuapp.com/api/auth/user', config).then(res => dispatch(loaduser(res.data))).catch(
+        err => console.log(err)
+      )
     }
-    axios.get('https://photogallerys.herokuapp.com/api/auth/user', config).then(res => dispatch(loaduser(res.data))).catch(
-      err => console.log(err)
-    )
+
   }
   useEffect(() => {
     fetchuser()
