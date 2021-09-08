@@ -13,7 +13,7 @@ const AddPhotos = ({ username }) => {
     const myuser = useSelector((state) => {
         return state.auth
     })
-    const { token, user } = myuser
+    const { token, user, isAuthenticated } = myuser
     const dispatch = useDispatch()
     const submitfile = (e) => {
         e.preventDefault()
@@ -41,6 +41,8 @@ const AddPhotos = ({ username }) => {
             setPic(null)
         }
     }
+    console.log(isAuthenticated)
+    console.log(user)
     return (
         <>
             <div className="container my-3">
