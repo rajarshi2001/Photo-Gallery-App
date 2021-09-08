@@ -22,31 +22,32 @@ const App = () => {
         'Content-Type': 'application/json'
       }
     }
-
+    if (token) { }
     config.headers['Authorization'] = `Token ${token}`
 
 
-    axios.get('https://photogallerys.herokuapp.com/api/auth/user', config).then(res => dispatch(loaduser({det:res.data,tokens:token}))).catch(
+    axios.get('https://photogallerys.herokuapp.com/api/auth/user', config).then(res => dispatch(loaduser({ det: res.data, tokens: token }))).catch(
       err => console.log(err)
     )
-
-
   }
-  useEffect(() => {
-    fetchuser()
-  }, [])
-  return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <PrivateRoute exact path="/dashboard" component={Gallerys} />
-          <Route component={Error}></Route>
-        </Switch>
-      </BrowserRouter>
-    </>
-  )
+
+
+}
+useEffect(() => {
+  fetchuser()
+}, [])
+return (
+  <>
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <PrivateRoute exact path="/dashboard" component={Gallerys} />
+        <Route component={Error}></Route>
+      </Switch>
+    </BrowserRouter>
+  </>
+)
 }
 export default App;
