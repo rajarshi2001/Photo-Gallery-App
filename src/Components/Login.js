@@ -17,7 +17,7 @@ const Login = () => {
         return state.error
     })
     const {allerror} = allerrors
-    const { isAuthenticated } = loginuser
+    const { isAuthenticated, token } = loginuser
     const submituser = (e) => {
         e.preventDefault()
         console.log(users)
