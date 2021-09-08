@@ -6,11 +6,11 @@ const PrivateRoute = ({component: Component, auth, ...rest}) =>{
     const authuser = useSelector((state) => {
         return state.auth
     })
-    const {isAuthenticated} = authuser
+    const {isAuthenticated, token} = authuser
     return(
         <>
              <Route {...rest} render={(props) => (
-                isAuthenticated ? <Component {...props} /> : <Redirect to="/" />
+                token ? <Component {...props} /> : <Redirect to="/" />
             )
 
             } />

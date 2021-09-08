@@ -13,7 +13,7 @@ const Register = () => {
     const myphotos = useSelector((state) => {
         return state.auth
     })
-    const { isAuthenticated } = myphotos
+    const { isAuthenticated, token } = myphotos
     const regdetails = (e) => {
         e.preventDefault()
         const { username, email, password, password1 } = reg
@@ -52,7 +52,7 @@ const Register = () => {
     return (
         <>
             {
-                isAuthenticated ? <Redirect to="/dashboard" /> :
+                token ? <Redirect to="/dashboard" /> :
                     <>
                         <div className="container my-3">
                             <div className="row">

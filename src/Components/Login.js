@@ -49,7 +49,7 @@ const Login = () => {
     return (
         <>
             {
-                isAuthenticated ? <Redirect to="/dashboard" /> : <>
+                token ? <Redirect to="/dashboard" /> : <>
                     <div className="container my-3">
                         <div className="row">
                             <div className="col-12 col-lg-12">
